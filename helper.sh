@@ -158,6 +158,8 @@ while true; do
 								git config --global user.name "$name"
 								git commit -m "Deploy number $((j+1))"
 								git push heroku master --force
+								heroku ps:scale web=0 -a $bname
+                                				heroku ps:scale web=1 -a $bname
 							done
 						else
 							echo -e "\nYou mad or what!? Doing 4 times \n"
@@ -174,6 +176,8 @@ while true; do
 								git config --global user.name "$name"
 								git commit -m "Deploy number $((j+1))"
 								git push heroku master --force
+								heroku ps:scale web=0 -a $bname
+                                				heroku ps:scale web=1 -a $bname
 							done
 						fi
 					break
@@ -237,6 +241,8 @@ while true; do
 								git config --global user.name "$name"
 								git commit -m "Deploy number $((j+1))"
 								git push heroku master --force
+								heroku ps:scale web=0 -a $bname
+                                				heroku ps:scale web=1 -a $bname
 							done
 						else
 							echo -e "\nYou mad or what!? Doing 4 times \n"
